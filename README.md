@@ -1,1 +1,1 @@
-# epicshows
+# EPiC
