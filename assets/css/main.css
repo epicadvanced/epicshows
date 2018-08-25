@@ -1291,12 +1291,21 @@ input, select, textarea {
 				font-size: 2rem;
 			}
 
-		#header .center {
+		/* #header .center {
 			display: block;
 			margin-left: auto;
     			margin-right: auto;
     			width: 50%;
+		} */
+
+		#header .center {
+			position: absolute;
+			width: 200px;
+			left: 50%;
+			margin-left: -100px;
 		}
+
+
 
 		#header .content {
 			border-style: solid;
