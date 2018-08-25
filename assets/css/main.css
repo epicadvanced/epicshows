@@ -1291,6 +1291,13 @@ input, select, textarea {
 				font-size: 2rem;
 			}
 
+		#header .center {
+			display: block;
+			margin-left: auto;
+    			margin-right: auto;
+    			width: 50%;
+		}
+
 		#header .content {
 			border-style: solid;
 			border-color: #ffffff;
