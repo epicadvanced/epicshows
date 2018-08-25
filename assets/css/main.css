@@ -1293,7 +1293,7 @@ input, select, textarea {
 
 		#header .center {
 			position: absolute;
-			width: 75px;
+			width: .075%;
 			left: 122.5%;
 			margin-left: -100px;
 		}
