@@ -20,21 +20,37 @@
   <body>
     <h1>Points!</h1>
     <h2>add points</h2>
-    <form id="addPoints">
+      <form id="addPoints">
 	    Name: <br>
 	    <input type="text" id="addName"></input><br>
 	    Points: <br>
 	    <input type="text" id="addPoint"></input><br>
 	    <input type="submit"></input><br>
-    </form>
+      </form>
+    <h2>find my points</h2>
+      <form id="getPoints">
+	    Name: 
+	    <input type="text" id="myName"></input><br>
+	    <input type="submit"></input><br>
+      </form>
+      <div id="myPoints"></div>
+      <br>
     <h2>see current points</h2>
     <script>
 	   //Get Points
-	   /* firebase.database().ref('points').once('value').then(function(snapshot) {
-		    var pointsVal = snapshot.val();
-		    var para = $("<p></p>").text("Points: " + pointsVal);
-		    $("body").append(para);
-	    }); */
+	    function getPoint(uName) {
+	    	firebase.database().ref('points/' + uName).once('value').then(function(snapshot) {
+		    	var pointsVal = snapshot.val();
+		    	var para = $("<p></p>").text("Points: " + pointsVal);
+		    	$("#myPoints").append(para);
+	    	}); 
+	    }
+	    
+	    $("#getPoints").submit(function(event) {
+	      	  event.preventDefault();
+		  getPoint($("#myName").val());
+		  $("#myName").val("");
+	      });
 	    
 	    //Get ALL Points
 	    firebase.database().ref('points').once('value', function(snapshot) {
