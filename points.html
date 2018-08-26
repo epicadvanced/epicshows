@@ -29,7 +29,7 @@
 	     	 $("#points").append(points);
 	    }); */
 	    function addPoints(name, pointsVal) {
-		firebase.database().ref('points/' + name).set({
+		firebase.database().ref(name).set({
 			points: pointsVal
 		});
 	    }
