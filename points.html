@@ -56,7 +56,9 @@
 		event.preventDefault(); 
 		var addName = $("#addName").val();
 		var addPoints = $("#addPoint").val();
-		setPoints(addName, addPoints);  
+		setPoints(addName, addPoints);
+		$("#addName").val("");
+		$("#addPoints").val("");
 		reload();
 	    });
     </script>
