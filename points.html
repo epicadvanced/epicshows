@@ -48,16 +48,15 @@
 	    });
 	    
 	    //Add Points
-	    function addPoints(name, pointsVal) {
+	    function setPoints(name, pointsVal) {
 		firebase.database().ref('/points/' + name).set(pointsVal);
 	    }
 	    
 	    $("#addPoints").submit(function(event) {
 		event.preventDefault(); 
-		alert("it was lit");
 		var addName = $("input:first").val();
 		var addPoints = $("input:second").val();
-		addPoints(addName, addPoints);   
+		setPoints(addName, addPoints);   
 	    });
     </script>
   </body>
