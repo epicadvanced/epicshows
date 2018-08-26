@@ -30,9 +30,11 @@
 	    //Get ALL Points
 	    firebase.database().ref('points').once('value', function(snapshot) {
 		snapshot.forEach(function(child) {
+			var nameVal = child.key;
 			var pointsVal = child.val();
-		   	var para = $("<p></p>").text("Points: " + pointsVal);
-		   	$("body").append(para);
+			var paraName = $(<p></p>").text("Name: " + nameVal);
+		   	var paraPoints = $("<p></p>").text("Points: " + pointsVal);
+		   	$("body").append(paraName, paraPoints, "<br>");
 		});
 	    });
 	    
