@@ -49,7 +49,7 @@
 	    
 	    //Add Points
 	    function setPoints(name, pointsVal) {
-		firebase.database().ref('/points/' + name).set(pointsVal);
+		firebase.database().ref('/points/' + name).set(parseInt(pointsVal, 10));
 	    }
 	    
 	    $("#addPoints").submit(function(event) {
