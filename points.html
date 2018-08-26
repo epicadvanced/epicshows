@@ -22,12 +22,11 @@
     <p id="name">Name:</p>
     <p id="points">Points:</p>
     <script>
-	    $("#name").append("Lex");
-	    function fuck(snapshot) {
-		 var points = (snapshot.val && snapshot.val.points) || 'Unknown';
+	    $("#name").append("Lex")
+	    firebase.database().ref('/points/lex/').once('value').then(function(snapshot) {
+		 var points = (snapshot.val() && snapshot.val().points) || 'Unknown';
 	     	 $("#points").append(points);
-	    }
-	    fuck(database.ref('/points/lex/').once('value'));
+	    });
     </script>
   </body>
 </html>
