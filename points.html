@@ -29,11 +29,9 @@
 	     	 $("#points").append(points);
 	    }); */
 	    function addPoints(name, pointsVal) {
-		firebase.database().ref(name).set({
-			points: pointsVal
-		});
+		firebase.database().ref(name).set(pointsVal);
 	    }
-	    addPoints('lex', 5);
+	    addPoints('Lex Von Klark', 5);
     </script>
   </body>
 </html>
