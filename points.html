@@ -24,6 +24,7 @@
     <script>
 	    $("#name").append("Lex")
 	    firebase.database().ref('/points/lex/').once('value').then(function(snapshot) {
+		 console.log("fuck");
 		 var points = (snapshot.val() && snapshot.val().points) || 'Unknown';
 	     	 $("#points").append(points);
 	    });
