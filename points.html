@@ -19,14 +19,12 @@
   </head>
   <body>
     <h1>points</h1>
-    <p id="name">Name: </p>
-    <p id="points">Points: </p>
     <script>
-	   $("#name").append("Lex Von Klark")
 	   //Get Points
 	    firebase.database().ref('Lex Von Klark').once('value').then(function(snapshot) {
 		    var pointsVal = snapshot.val();
-		    $("#points").append(pointsVal);
+		    var para = $("<p></p>").text("Points: " + pointsVal);
+		    $("body").append(para);
 	    });
 	   //Add Points
 	   /* function addPoints(name, pointsVal) {
