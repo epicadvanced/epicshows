@@ -23,10 +23,11 @@
     <p id="points">Points:</p>
     <script>
 	    $("#name").append("Lex");
-	    return database.ref('/points/lex/').once('value').then(function(snapshot) {
-		     var points = (snapshot.val() && snapshot.val().points) || 'Unknown';
-	     	     $("#points").append(points);
-	    });
+	    var snapshot = database.ref('/points/lex/').once('value');
+	    function(snapshot){
+		 var points = (snapshot.val() && snapshot.val().points) || 'Unknown';
+	     	 $("#points").append(points);
+	    }
     </script>
   </body>
 </html>
