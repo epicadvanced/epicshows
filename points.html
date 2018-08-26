@@ -18,7 +18,15 @@
     </script>
   </head>
   <body>
-    <h1>points</h1>
+    <h1>Points!</h1>
+    <h2>add points</h2>
+    <form id="addPoints">
+	    Name: <br>
+	    <input type="text" name="addName"></input>
+	    Points: <br>
+	    <input type="text" name="addPoint"></input>
+	    <input type="submit"></input>
+    </form>
     <script>
 	   //Get Points
 	   /* firebase.database().ref('points').once('value').then(function(snapshot) {
@@ -38,12 +46,17 @@
 		});
 	    });
 	    
-	   //Add Points
-	   /* function addPoints(name, pointsVal) {
+	    //Add Points
+	    function addPoints(name, pointsVal) {
 		firebase.database().ref(name).set(pointsVal);
 	    }
-	    addPoints('Lex Von Klark', 5);
-	   */
+	    
+	    $("#addPoints").submit(function(event) {
+		var addName = $("input:first").val();
+		var addPoints = $("input:second").val();
+		addPoints(addName, addPoints);
+		event.preventDefault();    
+	    });
     </script>
   </body>
 </html>
