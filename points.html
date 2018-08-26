@@ -15,6 +15,18 @@
 	};
       firebase.initializeApp(config);
       var database = firebase.database();
+	    
+      //points adding check, MAKE SAFER 
+      function addPointsCheck() {
+	      var pass = prompt("what is the password: ");
+	      
+	      if (pass == "britterikpeter") {
+		      document.location.href="addPoints.html";
+	      }
+	      else {
+		      alert("wrong");
+	      }
+      }
     </script>
   </head>
   <body>
@@ -23,7 +35,7 @@
     <h2>what are points</h2>
 	  <p>you need them or you will fail drama.<br> the more you have, the less erik hates you.<br> do work please.</p>
     <h2>add points</h2>
-	  <a href="addPoints.html">link</a>
+	  <button onclick="addPointsCheck()">Link</button>
     <h2>find my points</h2>
       <form id="getPoints">
 	    Name: 
