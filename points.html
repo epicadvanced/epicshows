@@ -21,11 +21,21 @@
     <h1>points</h1>
     <script>
 	   //Get Points
-	    firebase.database().ref('Lex Von Klark').once('value').then(function(snapshot) {
+	   /* firebase.database().ref('points').once('value').then(function(snapshot) {
 		    var pointsVal = snapshot.val();
 		    var para = $("<p></p>").text("Points: " + pointsVal);
 		    $("body").append(para);
+	    }); */
+	    
+	    //Get ALL Points
+	    firebase.database().ref('points').once('value', function(snapshot) {
+		snapshot.forEach(function(child) {
+			var pointsVal = child.val();
+		   	var para = $("<p></p>").text("Points: " + pointsVal);
+		   	$("body").append(para);
+		});
 	    });
+	    
 	   //Add Points
 	   /* function addPoints(name, pointsVal) {
 		firebase.database().ref(name).set(pointsVal);
