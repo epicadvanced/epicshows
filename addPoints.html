@@ -1,7 +1,47 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB62qoHWdEnchYSXU7vy3yy-BDwGtiUzuQ",
+	authDomain: "epicadvanced19.firebaseapp.com",
+	databaseURL: "https://epicadvanced19.firebaseio.com",
+	projectId: "epicadvanced19",
+	storageBucket: "epicadvanced19.appspot.com",
+	messagingSenderId: "295442314130"
+	};
+      firebase.initializeApp(config);
+      var database = firebase.database();
+    </script>
 </head>
 <body>
+  <h1>add points</h1>
+  <form id="addPoints">
+	    Name: 
+	    <input type="text" id="addName"></input><br>
+	    Points: 
+	    <input type="text" id="addPoint"></input><br>
+	    <input type="submit"></input><br>
+  </form>
+
+<script>
+  //Add Points
+	    function setPoints(name, pointsVal) {
+		firebase.database().ref('/points/' + name).set(parseInt(pointsVal, 10));
+	    }
+	    
+	    $("#addPoints").submit(function(event) {
+		event.preventDefault(); 
+		var addName = $("#addName").val();
+		var addPoints = $("#addPoint").val();
+		setPoints(addName, addPoints);
+		$("#addName").val("");
+		$("#addPoint").val("");
+		location.reload();
+	    });
+</script>
 </body>
 </html>
