@@ -53,10 +53,11 @@
 	    }
 	    
 	    $("#addPoints").submit(function(event) {
+		event.preventDefault(); 
+		alert("it was lit");
 		var addName = $("input:first").val();
 		var addPoints = $("input:second").val();
-		addPoints(addName, addPoints);
-		event.preventDefault();    
+		addPoints(addName, addPoints);   
 	    });
     </script>
   </body>
