@@ -27,6 +27,7 @@
 	    firebase.database().ref(name).once('value').then(function(snapshot) {
 		    var pointsVal = snapshot.val();
 		    $("#points").append(pointsVal);
+	    });
 	   //Add Points
 	   /* function addPoints(name, pointsVal) {
 		firebase.database().ref(name).set(pointsVal);
