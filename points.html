@@ -41,7 +41,7 @@
 	    function getPoint(uName) {
 	    	firebase.database().ref('points/' + uName).once('value').then(function(snapshot) {
 		    	var pointsVal = snapshot.val();
-		    	var para = $("<p></p>").text("Points: " + pointsVal);
+		    	var para = $("<p></p>").text(uName + ": " + pointsVal + "points");
 		    	$("#myPoints").append(para);
 	    	}); 
 	    }
