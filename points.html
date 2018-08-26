@@ -22,9 +22,9 @@
     <h2>add points</h2>
     <form id="addPoints">
 	    Name: <br>
-	    <input type="text" name="addName"></input><br>
+	    <input type="text" id="addName"></input><br>
 	    Points: <br>
-	    <input type="text" name="addPoint"></input><br>
+	    <input type="text" id="addPoint"></input><br>
 	    <input type="submit"></input><br>
     </form>
     <h2>see current points</h2>
@@ -54,8 +54,8 @@
 	    
 	    $("#addPoints").submit(function(event) {
 		event.preventDefault(); 
-		var addName = $("input:first").val();
-		var addPoints = $("input:second").val();
+		var addName = $("#addName").val();
+		var addPoints = $("#addPoint").val();
 		setPoints(addName, addPoints);   
 	    });
     </script>
