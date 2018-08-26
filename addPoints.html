@@ -38,6 +38,7 @@
 		var addName = $("#addName").val();
 		var addPoints = $("#addPoint").val();
 		setPoints(addName, addPoints);
+		$("body").append("<p>" + addPoints + " points were added to " + addName + "</p>");
 		$("#addName").val("");
 		$("#addPoint").val("");
 		location.reload();
