@@ -63,7 +63,8 @@
 			var paraName = $("<p></p>").text("Name: " + nameVal);
 		   	var paraPoints = $("<p></p>").text("Points: " + pointsVal);
 		   	$("body").append(paraName, paraPoints, "<br>");
-		});
+		});    
+	       $("body").append("<br><br><p>made by lex</p>");
 	    });
 	    
 	    //Add Points
@@ -80,8 +81,6 @@
 		$("#addPoint").val("");
 		location.reload();
 	    });
-	    
-	    $("body").append("<br><br><p>made by lex</p>");
     </script>
   </body>
 </html>
