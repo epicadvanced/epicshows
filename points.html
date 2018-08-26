@@ -27,6 +27,7 @@
 	    function getPoints(name) {
 		   return firebase.database().ref('Lex Von Klark').once('value');
 	    }
+	    console.log(getPoints('Lex Von Klark'));
 	    $("#points").append(getPoints('Lex Von Klark'));
 	   //Add Points
 	   /* function addPoints(name, pointsVal) {
