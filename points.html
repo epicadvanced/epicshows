@@ -1,24 +1,27 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <script src="jquery-3.3.1.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
-	  <script>
- 		  // Initialize Firebase
- 		  var config = {
-		     apiKey: "AIzaSyB62qoHWdEnchYSXU7vy3yy-BDwGtiUzuQ",
-		     authDomain: "epicadvanced19.firebaseapp.com",
-		     databaseURL: "https://epicadvanced19.firebaseio.com",
-		     projectId: "epicadvanced19",
-		     storageBucket: "epicadvanced19.appspot.com",
-		     messagingSenderId: "295442314130"
-		   };
- 		  firebase.initializeApp(config);
-		  var database = firebase.database();
-	  </script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB62qoHWdEnchYSXU7vy3yy-BDwGtiUzuQ",
+	authDomain: "epicadvanced19.firebaseapp.com",
+	databaseURL: "https://epicadvanced19.firebaseio.com",
+	projectId: "epicadvanced19",
+	storageBucket: "epicadvanced19.appspot.com",
+	messagingSenderId: "295442314130"
+	};
+      firebase.initializeApp(config);
+      var database = firebase.database();
+	    
+      $("#name").append("sup bitch");
+    </script>
   </head>
   <body>
     <h1>points</h1>
-    <p>Name:</p>
-    <p>Points:</p>
+    <p id="name">Name:</p>
+    <p id="points">Points:</p>
   </body>
 </html>
