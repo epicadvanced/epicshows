@@ -15,6 +15,15 @@
 	};
       firebase.initializeApp(config);
       var database = firebase.database();
+	    
+      //Password Shit
+      window.onload = function passwordCheck() {
+	   var pass = prompt("What is the password?");
+	   
+	   if (pass != "jojosiwaslave") {
+		   window.history.back();
+	   }
+      }
     </script>
     <style>
 	#backArrow {
