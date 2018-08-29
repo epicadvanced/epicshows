@@ -50,7 +50,7 @@
 <script>
   //Add Points
 	    function setPoints(name, pointsVal) {
-		firebase.database().ref('/points/' + name).set(parseInt(pointsVal, 10));
+		firebase.database().ref('/points/' + name.toLowerCase()).set(parseInt(pointsVal, 10));
 	    }
 	    
 	    $("#addPoints").submit(function(event) {
