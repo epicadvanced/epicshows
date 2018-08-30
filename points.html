@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
     <script>
@@ -125,17 +123,6 @@
 		   	$("#leaderboard").prepend(paraName, paraPoints, "<br>");
 		});    
 	    });
-	    
-	    //autocomplete
-	    $( function() {
-    		var names = [];
-		$(".namePara").each(function(input) {
-			names.push($(this).text());
-		});
-    		$( "#subName" ).autocomplete({
-      		     source: names
-    		});
-  	    } );
     </script>
   </body>
 </html>
