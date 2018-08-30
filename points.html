@@ -95,7 +95,7 @@
       </form>
       <div id="myPoints"></div>
       <br>
-    <h2>see current points</h2>
+    <h2>leaderboard</h2>
     <script>
 	   //Get Points
 	    function getPoint(uName) {
@@ -113,7 +113,7 @@
 	      });
 	    
 	    //Get ALL Points
-	    firebase.database().ref('points').once('value', function(snapshot) {
+	    firebase.database().ref('points').orderByValue('value', function(snapshot) {
 		snapshot.forEach(function(child) {
 			var nameVal = child.key;
 			var pointsVal = child.val();
