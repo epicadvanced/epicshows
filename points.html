@@ -96,6 +96,7 @@
       <div id="myPoints"></div>
       <br>
     <h2>leaderboard</h2>
+    <span id="leaderboard"></span>
     <script>
 	   //Get Points
 	    function getPoint(uName) {
@@ -129,7 +130,7 @@
 			var pointsVal = child.val();
 			var paraName = $("<p></p>").text("Name: " + nameVal);
 		   	var paraPoints = $("<p></p>").text("Points: " + pointsVal);
-		   	$("body").append(paraName, paraPoints, "<br>");
+		   	$("#leaderboard").prepend(paraName, paraPoints, "<br>");
 		});    
 	    });
     </script>
