@@ -101,9 +101,6 @@
     <h2>leaderboard</h2>
     <span id="leaderboard"></span>
     <script>
-	   //array for autocomplete
-	   var nameArray = []; 
-	    
 	   //Get Points
 	    function getPoint(uName) {
 	    	firebase.database().ref('points/' + uName.toLowerCase()).once('value').then(function(snapshot) {
@@ -123,18 +120,23 @@
 	    firebase.database().ref('points').orderByValue().on('value', function(snapshot) {
 		snapshot.forEach(function(child) {
 			var nameVal = child.key;
-			nameArray.push(nameVal);
 			var pointsVal = child.val();
-			var paraName = $("<p></p>").text("Name: " + nameVal);
+			var paraName = $("<p class="namePara"></p>").text(nameVal);
 		   	var paraPoints = $("<p></p>").text("Points: " + pointsVal);
 		   	$("#leaderboard").prepend(paraName, paraPoints, "<br>");
 		});    
 	    });
 	    
 	    //autocomplete
-	    $("#subName").autocomplete({
-		 source: nameArray
-	    });
+	    $( function() {
+    		var names = [];
+		$(".namePara").each(function(input) {
+			names.push($(this).text());
+		});
+    		$( "#subName" ).autocomplete({
+      		     source: names
+    		});
+  	    } );
     </script>
   </body>
 </html>
