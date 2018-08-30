@@ -6,6 +6,7 @@
 -->
 <html>
 	<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js">
 	<script>
  		 // Initialize Firebase
  		 var config = {
@@ -385,6 +386,11 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var keyLog = [];
+				$("body").keydown(function(input) {
+					console.log(input.keyCode);	
+				});
 
 	</body>
 </html>
