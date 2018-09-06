@@ -77,7 +77,7 @@
   <body align=center>
     <a href="index.html" align=left><img id="backArrow" src="/images/left-arrow.png"></a>
 	  <img id="pointsTitle" src="/images/4b6aba0a3b085023b2242545a23031d6.png">
-    <h2>what are points</h2>
+    <h2>what are hours</h2>
 	  <p>advanced drama students need to acquire a certain number of hours<br>
 	     before the end of the semester in order to get a good grade. these <br>
              hours are acquired by putting in time to help the company at work <br>
@@ -103,7 +103,7 @@
 	    function getPoint(uName) {
 	    	firebase.database().ref('points/' + uName.toLowerCase()).once('value').then(function(snapshot) {
 		    	var pointsVal = snapshot.val();
-		    	var para = $("<p></p>").text(uName + ": " + pointsVal + " points");
+		    	var para = $("<p></p>").text(uName + ": " + pointsVal + " hours");
 		    	$("#myPoints").append(para);
 	    	}); 
 	    }
@@ -120,7 +120,7 @@
 			var nameVal = child.key;
 			var pointsVal = child.val();
 			var paraName = $("<p class='namePara'></p>").text(nameVal);
-		   	var paraPoints = $("<p></p>").text("Points: " + pointsVal);
+		   	var paraPoints = $("<p></p>").text("Hours: " + pointsVal);
 		   	$("#leaderboard").prepend(paraName, paraPoints, "<br>");
 		});    
 	    });
