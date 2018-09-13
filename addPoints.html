@@ -59,7 +59,7 @@
 	    function setPoints(name, pointsVal) {
 		firebase.database().ref('points/' + name.toLowerCase()).once('value').then(function(snapshot) {
 			var currentPoints = snapshot.val();
-			firebase.database().ref('/points/' + name.toLowerCase()).set(currentPoints + parseInt(pointsVal, 10));
+			firebase.database().ref('/points/' + name.toLowerCase()).set(currentPoints + parseFloat(pointsVal));
 	    	});
 	    }
 	    
