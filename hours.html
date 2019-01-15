@@ -121,7 +121,7 @@
 			var nameVal = child.key;
 			var pointsVal = child.val();
 			var paraName = $("<p class='namePara'></p>").text(nameVal);
-		   	var paraPoints = $("<p></p>").text("Hours: " + pointsVal);
+		   	var paraPoints = $("<p></p>").text("Points: " + pointsVal);
 		   	$("#leaderboard").prepend(paraName, paraPoints, "<br>");
 		});    
 	    });
