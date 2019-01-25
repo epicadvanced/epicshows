@@ -42,14 +42,14 @@
     </style>
 </head>
 <body background="/images/hackerBack.jpg">
-  <a href="hours.html"><img id="backArrow" src="/images/left-arrow.png"></a>
+  <a href="points.html"><img id="backArrow" src="/images/left-arrow.png"></a>
   <br><br>
-  <img src="/images/addHours.png">
+  <img src="/images/addPoints.png">
   <br>
   <form id="addPoints" style="color: white;">
 	    Name: 
 	    <input type="text" id="addName"></input><br>
-	    Hours: 
+	    Points: 
 	    <input type="text" id="addPoint"></input><br>
 	    <input type="submit"></input><br>
   </form>
@@ -68,7 +68,7 @@
 		var addName = $("#addName").val();
 		var addPoints = $("#addPoint").val();
 		setPoints(addName, addPoints);
-		$("body").append("<p>" + addPoints + " hours were added to " + addName + "</p>");
+		$("body").append("<p>" + addPoints + " points were added to " + addName + "</p>");
 		$("#addName").val("");
 		$("#addPoint").val("");
 	    });
