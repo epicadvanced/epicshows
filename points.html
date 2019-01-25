@@ -104,7 +104,7 @@
 	    function getPoint(uName) {
 	    	firebase.database().ref('points/' + uName.toLowerCase()).once('value').then(function(snapshot) {
 		    	var pointsVal = snapshot.val();
-		    	var para = $("<p></p>").text(uName + ": " + pointsVal + " hours");
+		    	var para = $("<p></p>").text(uName + ": " + pointsVal + " points");
 		    	$("#myPoints").append(para);
 	    	}); 
 	    }
